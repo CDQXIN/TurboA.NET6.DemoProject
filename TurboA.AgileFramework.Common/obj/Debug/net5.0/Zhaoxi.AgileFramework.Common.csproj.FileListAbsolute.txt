@@ -1,0 +1,12 @@
+D:\zhaoxi\Architect02\20210624Architect01Course024NET5Advanced\Zhaoxi.NET6.DemoProject\Zhaoxi.AgileFramework.Common\bin\Debug\net5.0\Zhaoxi.AgileFramework.Common.deps.json
+D:\zhaoxi\Architect02\20210624Architect01Course024NET5Advanced\Zhaoxi.NET6.DemoProject\Zhaoxi.AgileFramework.Common\bin\Debug\net5.0\Zhaoxi.AgileFramework.Common.dll
+D:\zhaoxi\Architect02\20210624Architect01Course024NET5Advanced\Zhaoxi.NET6.DemoProject\Zhaoxi.AgileFramework.Common\bin\Debug\net5.0\ref\Zhaoxi.AgileFramework.Common.dll
+D:\zhaoxi\Architect02\20210624Architect01Course024NET5Advanced\Zhaoxi.NET6.DemoProject\Zhaoxi.AgileFramework.Common\bin\Debug\net5.0\Zhaoxi.AgileFramework.Common.pdb
+D:\zhaoxi\Architect02\20210624Architect01Course024NET5Advanced\Zhaoxi.NET6.DemoProject\Zhaoxi.AgileFramework.Common\obj\Debug\net5.0\Zhaoxi.AgileFramework.Common.csproj.AssemblyReference.cache
+D:\zhaoxi\Architect02\20210624Architect01Course024NET5Advanced\Zhaoxi.NET6.DemoProject\Zhaoxi.AgileFramework.Common\obj\Debug\net5.0\Zhaoxi.AgileFramework.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\zhaoxi\Architect02\20210624Architect01Course024NET5Advanced\Zhaoxi.NET6.DemoProject\Zhaoxi.AgileFramework.Common\obj\Debug\net5.0\Zhaoxi.AgileFramework.Common.AssemblyInfoInputs.cache
+D:\zhaoxi\Architect02\20210624Architect01Course024NET5Advanced\Zhaoxi.NET6.DemoProject\Zhaoxi.AgileFramework.Common\obj\Debug\net5.0\Zhaoxi.AgileFramework.Common.AssemblyInfo.cs
+D:\zhaoxi\Architect02\20210624Architect01Course024NET5Advanced\Zhaoxi.NET6.DemoProject\Zhaoxi.AgileFramework.Common\obj\Debug\net5.0\Zhaoxi.AgileFramework.Common.csproj.CoreCompileInputs.cache
+D:\zhaoxi\Architect02\20210624Architect01Course024NET5Advanced\Zhaoxi.NET6.DemoProject\Zhaoxi.AgileFramework.Common\obj\Debug\net5.0\Zhaoxi.AgileFramework.Common.dll
+D:\zhaoxi\Architect02\20210624Architect01Course024NET5Advanced\Zhaoxi.NET6.DemoProject\Zhaoxi.AgileFramework.Common\obj\Debug\net5.0\ref\Zhaoxi.AgileFramework.Common.dll
+D:\zhaoxi\Architect02\20210624Architect01Course024NET5Advanced\Zhaoxi.NET6.DemoProject\Zhaoxi.AgileFramework.Common\obj\Debug\net5.0\Zhaoxi.AgileFramework.Common.pdb

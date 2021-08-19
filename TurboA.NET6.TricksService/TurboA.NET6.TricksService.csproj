@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TurboA.NET6.TricksCommon\TurboA.NET6.TricksCommon.csproj" />
+    <ProjectReference Include="..\TurboA.NET6.TricksInterface\TurboA.NET6.TricksInterface.csproj" />
+  </ItemGroup>
+
+</Project>

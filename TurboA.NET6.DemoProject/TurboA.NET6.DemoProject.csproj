@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.xml" />
+    <None Remove="pqavns4a.lnw~" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
+    <PackageReference Include="log4net" Version="2.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="5.0.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.0-preview.5.21321.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TurboA.AgileFramework.Pandora\TurboA.AgileFramework.Pandora.csproj" />
+    <ProjectReference Include="..\TurboA.AgileFramework.WebCore\TurboA.AgileFramework.WebCore.csproj" />
+    <ProjectReference Include="..\TurboA.NET6.Interface\TurboA.NET6.Interface.csproj" />
+    <ProjectReference Include="..\TurboA.NET6.Service\TurboA.NET6.Service.csproj" />
+  </ItemGroup>
+
+</Project>

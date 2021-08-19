@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Zhaoxi.NET6.Service/1.0.0": {
+        "dependencies": {
+          "Zhaoxi.NET6.Interface": "1.0.0"
+        },
+        "runtime": {
+          "Zhaoxi.NET6.Service.dll": {}
+        }
+      },
+      "Zhaoxi.NET6.Interface/1.0.0": {
+        "runtime": {
+          "Zhaoxi.NET6.Interface.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Zhaoxi.NET6.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Zhaoxi.NET6.Interface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

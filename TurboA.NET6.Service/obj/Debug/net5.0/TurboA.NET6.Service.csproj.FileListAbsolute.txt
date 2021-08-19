@@ -1,0 +1,15 @@
+E:\TurboA.NET6.DemoProject\TurboA.NET6.Service\bin\Debug\net5.0\TurboA.NET6.Service.deps.json
+E:\TurboA.NET6.DemoProject\TurboA.NET6.Service\bin\Debug\net5.0\TurboA.NET6.Service.dll
+E:\TurboA.NET6.DemoProject\TurboA.NET6.Service\bin\Debug\net5.0\ref\TurboA.NET6.Service.dll
+E:\TurboA.NET6.DemoProject\TurboA.NET6.Service\bin\Debug\net5.0\TurboA.NET6.Service.pdb
+E:\TurboA.NET6.DemoProject\TurboA.NET6.Service\bin\Debug\net5.0\TurboA.NET6.Interface.dll
+E:\TurboA.NET6.DemoProject\TurboA.NET6.Service\bin\Debug\net5.0\TurboA.NET6.Interface.pdb
+E:\TurboA.NET6.DemoProject\TurboA.NET6.Service\obj\Debug\net5.0\TurboA.NET6.Service.csproj.AssemblyReference.cache
+E:\TurboA.NET6.DemoProject\TurboA.NET6.Service\obj\Debug\net5.0\TurboA.NET6.Service.GeneratedMSBuildEditorConfig.editorconfig
+E:\TurboA.NET6.DemoProject\TurboA.NET6.Service\obj\Debug\net5.0\TurboA.NET6.Service.AssemblyInfoInputs.cache
+E:\TurboA.NET6.DemoProject\TurboA.NET6.Service\obj\Debug\net5.0\TurboA.NET6.Service.AssemblyInfo.cs
+E:\TurboA.NET6.DemoProject\TurboA.NET6.Service\obj\Debug\net5.0\TurboA.NET6.Service.csproj.CoreCompileInputs.cache
+E:\TurboA.NET6.DemoProject\TurboA.NET6.Service\obj\Debug\net5.0\TurboA.NET6.Service.csproj.CopyComplete
+E:\TurboA.NET6.DemoProject\TurboA.NET6.Service\obj\Debug\net5.0\TurboA.NET6.Service.dll
+E:\TurboA.NET6.DemoProject\TurboA.NET6.Service\obj\Debug\net5.0\ref\TurboA.NET6.Service.dll
+E:\TurboA.NET6.DemoProject\TurboA.NET6.Service\obj\Debug\net5.0\TurboA.NET6.Service.pdb

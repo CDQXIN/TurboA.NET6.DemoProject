@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TurboA.AgileFramework.Pandora\TurboA.AgileFramework.Pandora.csproj" />
+    <ProjectReference Include="..\TurboA.NET6.TricksCommon\TurboA.NET6.TricksCommon.csproj" />
+    <ProjectReference Include="..\TurboA.NET6.TricksInterface\TurboA.NET6.TricksInterface.csproj" />
+    <ProjectReference Include="..\TurboA.NET6.TricksService\TurboA.NET6.TricksService.csproj" />
+  </ItemGroup>
+
+</Project>
