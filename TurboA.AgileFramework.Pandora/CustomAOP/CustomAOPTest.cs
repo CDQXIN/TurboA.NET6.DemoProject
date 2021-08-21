@@ -5,6 +5,9 @@ using System.Text;
 
 namespace TurboA.AgileFramework.Pandora.CustomAOP
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class CustomAOPTest
     {
         public static void Show()
