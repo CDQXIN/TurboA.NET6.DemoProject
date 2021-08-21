@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace Zhaoxi.AgileFramework.Pandora
+namespace TurboA.AgileFramework.Pandora
 {
     /// <summary>
     /// 自定义CallContext,只能保证自身是线程安全，

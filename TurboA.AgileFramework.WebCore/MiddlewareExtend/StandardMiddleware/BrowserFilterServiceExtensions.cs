@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore.MiddlewareExtend.StandardMiddleware
+namespace TurboA.AgileFramework.WebCore.MiddlewareExtend.StandardMiddleware
 {
     /// <summary>
     /// 集中注册内部映射，可以多个

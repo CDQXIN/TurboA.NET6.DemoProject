@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Zhaoxi.AgileFramework.WebCore
+namespace TurboA.AgileFramework.WebCore
 {
     public class CustomClientLoggerInterceptor : Interceptor
     {

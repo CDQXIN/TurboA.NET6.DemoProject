@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore
+namespace TurboA.AgileFramework.WebCore
 {
     public class CustomServerLoggerInterceptor : Interceptor
     {

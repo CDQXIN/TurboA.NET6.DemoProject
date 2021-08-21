@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.Common
+namespace TurboA.AgileFramework.Common
 {
 	public enum PayStatusEnum
 	{

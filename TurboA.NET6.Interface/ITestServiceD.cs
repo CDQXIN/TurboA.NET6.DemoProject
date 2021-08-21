@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Zhaoxi.NET6.Interface
+namespace TurboA.NET6.Interface
 {
     public interface ITestServiceD
     {

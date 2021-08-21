@@ -4,9 +4,9 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Profile;
 using System;
 using System.Text;
-using Zhaoxi.AgileFramework.Common.Models;
+using TurboA.AgileFramework.Common.Models;
 
-namespace Zhaoxi.MSACommerce.Core
+namespace TurboA.MSACommerce.Core
 {
     /// <summary>
     /// 1、需要导入aliyun-net-sdk-core依赖
@@ -40,7 +40,7 @@ namespace Zhaoxi.MSACommerce.Core
                 request.Action = "SendSms";
                 // request.Protocol = ProtocolType.HTTP;
                 request.AddQueryParameters("PhoneNumbers", phoneNumber); // 电话号码
-                request.AddQueryParameters("SignName", "朝夕教育Eleven"); // 签名模板的名称
+                request.AddQueryParameters("SignName", "哈哈哈TurboA"); // 签名模板的名称
                 request.AddQueryParameters("TemplateCode", "SMS_210070060"); // 验证码模板ID
                 request.AddQueryParameters("TemplateParam", "{\"code\":\"" + code + "\"}"); // 验证码
 

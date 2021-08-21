@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace Zhaoxi.NET6.TricksCommon
+namespace TurboA.NET6.TricksCommon
 {
     public class LogHelper
     {
         public static void LogMessage(string message)
         {
             Console.WriteLine($"{DateTime.Now.ToString("yyyyMMdd HH:mm:ss fff")}");
-            //如果我想写入数据库呢？--引用Zhaoxi.NET6.TricksService？
+            //如果我想写入数据库呢？--引用TurboA.NET6.TricksService？
         }
         #region MyRegion
         /// <summary>

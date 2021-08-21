@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Zhaoxi.NET6.DemoProject.Models;
+using TurboA.NET6.DemoProject.Models;
 
-namespace Zhaoxi.NET6.DemoProject.Controllers
+namespace TurboA.NET6.DemoProject.Controllers
 {
     public class HomeController : Controller
     {
@@ -24,7 +24,7 @@ namespace Zhaoxi.NET6.DemoProject.Controllers
             //string result = base.HttpContext.Session.GetString("CurrentUser");
             //if (string.IsNullOrWhiteSpace(result))
             //{
-            //    base.HttpContext.Session.SetString("CurrentUser", "Eleven");
+            //    base.HttpContext.Session.SetString("CurrentUser", "TurboA");
             //}
 
             return View();

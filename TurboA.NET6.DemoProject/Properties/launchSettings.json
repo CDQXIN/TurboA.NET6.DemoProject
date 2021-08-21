@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "Zhaoxi.NET6.DemoProject": {
+    "TurboA.NET6.DemoProject": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

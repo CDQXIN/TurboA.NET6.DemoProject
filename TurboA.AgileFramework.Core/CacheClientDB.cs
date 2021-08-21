@@ -11,9 +11,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using Zhaoxi.AgileFramework.Common.IOCOptions;
+using TurboA.AgileFramework.Common.IOCOptions;
 
-namespace Zhaoxi.MSACommerce.Core
+namespace TurboA.MSACommerce.Core
 {
 	public class CacheClientDB : IDisposable
 	{

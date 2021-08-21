@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore.MiddlewareExtend
+namespace TurboA.AgileFramework.WebCore.MiddlewareExtend
 {
     /// <summary>
     /// Axios会触发，需要做个状态返回，还需要指定跨域信息，这里放在网关了

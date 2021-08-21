@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Diagnostics.Contracts;
-using Zhaoxi.AgileFramework.Pandora.CustomAOP;
-using Zhaoxi.AgileFramework.Pandora.CustomContainer;
-using Zhaoxi.NET6.TricksDemo.ActionInit;
-using Zhaoxi.NET6.TricksDemo.BuilderShow;
-using Zhaoxi.NET6.TricksDemo.CustomeAOP;
-using Zhaoxi.NET6.TricksInterface;
-using Zhaoxi.NET6.TricksService;
+using TurboA.AgileFramework.Pandora.CustomAOP;
+using TurboA.AgileFramework.Pandora.CustomContainer;
+using TurboA.NET6.TricksDemo.ActionInit;
+using TurboA.NET6.TricksDemo.BuilderShow;
+using TurboA.NET6.TricksDemo.CustomeAOP;
+using TurboA.NET6.TricksInterface;
+using TurboA.NET6.TricksService;
 
-namespace Zhaoxi.NET6.TricksDemo
+namespace TurboA.NET6.TricksDemo
 {
     /// <summary>
     /// 展示核心套路
@@ -77,7 +77,7 @@ namespace Zhaoxi.NET6.TricksDemo
                 {
                     ////解决循环引用
                     //IUserService userService = new UserService();
-                    //userService.Login("Eleven", "123456");
+                    //userService.Login("TurboA", "123456");
                 }
                 #endregion
 
@@ -94,7 +94,7 @@ namespace Zhaoxi.NET6.TricksDemo
                     //这里就又诞生了一个新的需求------流程组装-----就是刚才用特性是判断后执行逻辑，现在就是用特性判断后，只是组装流程，但是不执行
                     //其核心就是委托---靠委托来组装流程---然后执行时就可以按顺序来
 
-                    IZhaoxiContainer container = new ZhaoxiContainer();
+                    ITurboAContainer container = new TurboAContainer();
                     container.Register<ITricksServiceA, TricksServiceA>();
                     var serviceA = container.Resolve<ITricksServiceA>();
                     serviceA.Show();

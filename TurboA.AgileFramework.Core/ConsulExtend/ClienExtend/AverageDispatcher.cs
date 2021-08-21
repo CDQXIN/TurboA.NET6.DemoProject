@@ -5,7 +5,7 @@ using System.Text;
 using Consul;
 using Microsoft.Extensions.Options;
 
-namespace Zhaoxi.AgileFramework.Core.ConsulExtend
+namespace TurboA.AgileFramework.Core.ConsulExtend
 {
     /// <summary>
     /// 平均

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore.StartupExtend
+namespace TurboA.AgileFramework.WebCore.StartupExtend
 {
     /// <summary>
     /// 发生在Run的时候，执行Startup类的Configure方法之前

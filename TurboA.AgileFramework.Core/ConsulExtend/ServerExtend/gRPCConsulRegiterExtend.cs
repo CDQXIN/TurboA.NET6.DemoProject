@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.Core.ConsulExtend
+namespace TurboA.AgileFramework.Core.ConsulExtend
 {
     /// <summary>
     /// gRPC---当下注册模式时心跳失败

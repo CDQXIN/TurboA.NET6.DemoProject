@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.Common.IOCOptions
+namespace TurboA.AgileFramework.Common.IOCOptions
 {
 	public class KafkaOptions
 	{

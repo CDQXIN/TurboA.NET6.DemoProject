@@ -7,7 +7,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore
+namespace TurboA.AgileFramework.WebCore
 {
     public static class CommonExtend
     {

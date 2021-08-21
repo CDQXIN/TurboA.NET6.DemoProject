@@ -8,11 +8,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using Zhaoxi.NET6.Interface;
-using Zhaoxi.NET6.Service;
+using TurboA.NET6.Interface;
+using TurboA.NET6.Service;
 using Module = Autofac.Module;
 
-namespace Zhaoxi.NET6.DemoProject.Utility
+namespace TurboA.NET6.DemoProject.Utility
 {
     public class CustomAutofacModule : Module
     {

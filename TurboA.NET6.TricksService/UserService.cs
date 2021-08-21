@@ -1,8 +1,8 @@
 ﻿using System;
-using Zhaoxi.NET6.TricksCommon;
-using Zhaoxi.NET6.TricksInterface;
+using TurboA.NET6.TricksCommon;
+using TurboA.NET6.TricksInterface;
 
-namespace Zhaoxi.NET6.TricksService
+namespace TurboA.NET6.TricksService
 {
     public class UserService : IUserService
     {

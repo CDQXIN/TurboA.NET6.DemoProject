@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Zhaoxi.NET6.TricksDemo.CustomeAOP
+namespace TurboA.NET6.TricksDemo.CustomeAOP
 {
     public class TricksServiceA : ITricksServiceA
     {

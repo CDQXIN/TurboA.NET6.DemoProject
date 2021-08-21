@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore.IOCExtend
+namespace TurboA.AgileFramework.WebCore.IOCExtend
 {
     /// <summary>
     /// 这个是控制器实例化的点

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.Core.ConsulExtend
+namespace TurboA.AgileFramework.Core.ConsulExtend
 {
     public class ConsulDistributed : IConsulDistributed
     {
@@ -40,9 +40,9 @@ namespace Zhaoxi.AgileFramework.Core.ConsulExtend
                 c.Datacenter = this._Datacenter;
             }))
             {
-                client.KV.Put(new KVPair("Eleven") { Value = Encoding.UTF8.GetBytes("This is Teacher") });
-                Console.WriteLine(client.KV.Get("Eleven"));
-                client.KV.Delete("Eleven");
+                client.KV.Put(new KVPair("TurboA") { Value = Encoding.UTF8.GetBytes("This is Teacher") });
+                Console.WriteLine(client.KV.Get("TurboA"));
+                client.KV.Delete("TurboA");
             }
         }
 

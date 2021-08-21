@@ -10,11 +10,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using Zhaoxi.AgileFramework.Pandora.IOCReplace;
-using Zhaoxi.AgileFramework.WebCore.ConfigurationExtend;
-using Zhaoxi.AgileFramework.WebCore.StartupExtend;
+using TurboA.AgileFramework.Pandora.IOCReplace;
+using TurboA.AgileFramework.WebCore.ConfigurationExtend;
+using TurboA.AgileFramework.WebCore.StartupExtend;
 
-namespace Zhaoxi.NET6.DemoProject
+namespace TurboA.NET6.DemoProject
 {
     public class Program
     {
@@ -50,7 +50,7 @@ namespace Zhaoxi.NET6.DemoProject
                 //    //configurationBuilder
                 //    //    .AddApollo(configurationBuilder.Build().GetSection("apollo"))
                 //    //    .AddDefault()
-                //    //    .AddNamespace("ZhaoxiMSAPrivateJson", ConfigFileFormat.Json)//自定义的private NameSpace
+                //    //    .AddNamespace("TurboAMSAPrivateJson", ConfigFileFormat.Json)//自定义的private NameSpace
                 //    //    .AddNamespace(ConfigConsts.NamespaceApplication);//Apollo中默认NameSpace的名称
                 //    #endregion
 
@@ -88,7 +88,7 @@ namespace Zhaoxi.NET6.DemoProject
         #region IOC容器
                 .UseServiceProviderFactory(new AutofacServiceProviderFactory())
                 //设置工厂来替换默认工厂实例---
-                //.UseServiceProviderFactory(new ZhaoxiContainerFactory())
+                //.UseServiceProviderFactory(new TurboAContainerFactory())
         #endregion
 
         #region ConfigureServices

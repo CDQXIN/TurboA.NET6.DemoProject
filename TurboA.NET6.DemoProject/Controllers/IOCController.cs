@@ -5,11 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Zhaoxi.NET6.Interface;
+using TurboA.NET6.Interface;
 using Microsoft.Extensions.DependencyInjection;
-using Zhaoxi.AgileFramework.WebCore.IOCExtend;
+using TurboA.AgileFramework.WebCore.IOCExtend;
 
-namespace Zhaoxi.NET6.DemoProject.Controllers
+namespace TurboA.NET6.DemoProject.Controllers
 {
     /// <summary>
     /// 
@@ -126,7 +126,7 @@ namespace Zhaoxi.NET6.DemoProject.Controllers
             this._logger.LogWarning($"This is {nameof(AOP)} Index");
 
             var a = this._iServiceProvider.GetService<IA>();
-            a.Show(123, "Eleven");
+            a.Show(123, "TurboA");
 
             return View();
         }

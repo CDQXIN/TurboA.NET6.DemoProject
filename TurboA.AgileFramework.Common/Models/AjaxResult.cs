@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.Common.Models
+namespace TurboA.AgileFramework.Common.Models
 {
     /// <summary>
     /// 通用数据返回类型

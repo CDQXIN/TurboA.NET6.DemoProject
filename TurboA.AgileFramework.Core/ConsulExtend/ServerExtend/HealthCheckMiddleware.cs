@@ -7,7 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.Core.ConsulExtend
+namespace TurboA.AgileFramework.Core.ConsulExtend
 {
     public static class HealthCheckMiddleware
     {

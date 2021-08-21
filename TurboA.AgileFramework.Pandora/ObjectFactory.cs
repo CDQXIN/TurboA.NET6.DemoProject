@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
-//using Zhaoxi.IOCDI.IBLL;
-//using Zhaoxi.IOCDI.IDAL;
+//using TurboA.IOCDI.IBLL;
+//using TurboA.IOCDI.IDAL;
 
-namespace Zhaoxi.AgileFramework.Pandora
+namespace TurboA.AgileFramework.Pandora
 {
     public class ObjectFactory
     {

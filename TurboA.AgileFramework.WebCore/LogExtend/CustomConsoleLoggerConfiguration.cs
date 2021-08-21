@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore.LogExtend
+namespace TurboA.AgileFramework.WebCore.LogExtend
 {
     /// <summary>
     /// 接受外部的配置

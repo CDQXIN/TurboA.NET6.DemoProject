@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.NET6.TricksDemo.BuilderShow
+namespace TurboA.NET6.TricksDemo.BuilderShow
 {
     public class Computer
     {

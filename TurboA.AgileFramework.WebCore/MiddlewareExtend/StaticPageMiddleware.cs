@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore.MiddlewareExtend
+namespace TurboA.AgileFramework.WebCore.MiddlewareExtend
 {
     /// <summary>
     /// 支持在返回HTML时，将返回的Stream保存到指定目录

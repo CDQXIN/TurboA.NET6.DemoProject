@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Zhaoxi.AgileFramework.Pandora.CustomAOP
+namespace TurboA.AgileFramework.Pandora.CustomAOP
 {
     public class CustomInterceptor : StandardInterceptor
     {

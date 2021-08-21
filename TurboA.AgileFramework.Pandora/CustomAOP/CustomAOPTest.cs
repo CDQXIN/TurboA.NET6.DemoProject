@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Zhaoxi.AgileFramework.Pandora.CustomAOP
+namespace TurboA.AgileFramework.Pandora.CustomAOP
 {
     public class CustomAOPTest
     {

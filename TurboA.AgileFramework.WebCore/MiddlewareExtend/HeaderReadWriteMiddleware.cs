@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore.MiddlewareExtend
+namespace TurboA.AgileFramework.WebCore.MiddlewareExtend
 {
     public class HeaderReadWriteMiddleware
     {
@@ -35,7 +35,7 @@ namespace Zhaoxi.AgileFramework.WebCore.MiddlewareExtend
             {
                 var httpContext = (HttpContext)state;
                 httpContext.Response.Headers.Add("middlewareStarting", "HeaderReadWriteMiddleware12345");
-                //await httpContext.Response.WriteAsync("This is Eleven"); //写不进去，带上中间件，写入时才发生的
+                //await httpContext.Response.WriteAsync("This is TurboA"); //写不进去，带上中间件，写入时才发生的
 
             }, context);
 
@@ -47,7 +47,7 @@ namespace Zhaoxi.AgileFramework.WebCore.MiddlewareExtend
                
                 httpContext.Response.Headers.Add("middlewareComplated", "HeaderReadWriteMiddleware12345222");//写不进去了，不生效
 
-                //await httpContext.Response.WriteAsync("This is Eleven"); //带上中间件，写入时才发生的
+                //await httpContext.Response.WriteAsync("This is TurboA"); //带上中间件，写入时才发生的
             }, context);
 
             await this._next.Invoke(context);

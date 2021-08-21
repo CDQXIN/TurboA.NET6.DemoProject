@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Zhaoxi.AgileFramework.Core.ConsulExtend
+namespace TurboA.AgileFramework.Core.ConsulExtend
 {
     /// <summary>
     /// 使用Consul时需要配置

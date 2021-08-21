@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Zhaoxi.AgileFramework.Common.IOCOptions;
+using TurboA.AgileFramework.Common.IOCOptions;
 
-namespace Zhaoxi.AgileFramework.Core
+namespace TurboA.AgileFramework.Core
 {
     /// <summary>
     /// 一个Exchange----多个Queue-----弄个缓存映射关系，初始化+支持全新绑定
@@ -169,7 +169,7 @@ namespace Zhaoxi.AgileFramework.Core
             {
                 try
                 {
-                    string delayExchangeName = "ZhaoxiMSA_DelayExchange";
+                    string delayExchangeName = "TurboAMSA_DelayExchange";
 
                     //普通交换器
                     channel.ExchangeDeclare(delayExchangeName, "fanout", true, false, null);
@@ -178,16 +178,16 @@ namespace Zhaoxi.AgileFramework.Core
                     args.Add("x-message-ttl", delaySecond * 1000);//TTL 毫秒
                     args.Add("x-dead-letter-exchange", targetExchangeName);//DLX
                     args.Add("x-dead-letter-routing-key", "routingkey");//routingKey
-                    channel.QueueDeclare("ZhaoxiMSA_DelayQueue", true, false, false, args);
-                    channel.QueueBind(queue: "ZhaoxiMSA_DelayQueue",
+                    channel.QueueDeclare("TurboAMSA_DelayQueue", true, false, false, args);
+                    channel.QueueBind(queue: "TurboAMSA_DelayQueue",
                         exchange: delayExchangeName,
                         routingKey: string.Empty,
                         arguments: null);
 
                     ////DLX--- //死信队列绑定
-                    //channel.ExchangeDeclare("ZhaoxiMSA_exchange_dlx", "fanout", true, false, null);
-                    //channel.QueueDeclare("ZhaoxiMSA_queue_dlx", true, false, false, null);
-                    //channel.QueueBind("ZhaoxiMSA_queue_dlx", "ZhaoxiMSA_exchange_dlx", "routingkey", null);
+                    //channel.ExchangeDeclare("TurboAMSA_exchange_dlx", "fanout", true, false, null);
+                    //channel.QueueDeclare("TurboAMSA_queue_dlx", true, false, false, null);
+                    //channel.QueueBind("TurboAMSA_queue_dlx", "TurboAMSA_exchange_dlx", "routingkey", null);
 
 
                     channel.TxSelect();//开启Tx事务---RabbitMQ协议级的事务-----强事务

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore.MiddlewareExtend.StandardMiddleware
+namespace TurboA.AgileFramework.WebCore.MiddlewareExtend.StandardMiddleware
 {
     /// <summary>
     /// 扩展注册---3种方式

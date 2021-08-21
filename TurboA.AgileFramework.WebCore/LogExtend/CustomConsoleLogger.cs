@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore.LogExtend
+namespace TurboA.AgileFramework.WebCore.LogExtend
 {
     /// <summary>
     /// 写日志具体操作
@@ -49,7 +49,7 @@ namespace Zhaoxi.AgileFramework.WebCore.LogExtend
             if (this._CustomColorConsoleLoggerConfiguration.EventId == 0 || this._CustomColorConsoleLoggerConfiguration.EventId == eventId.Id)
             {
                 //日志输出到控制台
-                Console.WriteLine($"Eleven Custom Log: {logLevel} - {eventId.Id} " + $"- {this._loggerName} - {formatter(state, exception)}");
+                Console.WriteLine($"TurboA Custom Log: {logLevel} - {eventId.Id} " + $"- {this._loggerName} - {formatter(state, exception)}");
             }
         }
     }

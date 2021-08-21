@@ -66,7 +66,7 @@ ES配置启动
 docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -e ES_JAVA_OPTS="-Xms100m -Xmx200m" elasticsearch:7.2.0
 
 启动logstash
-docker run --rm -it --privileged=true -p 9600:9600  -d -v /eleven/logstash/kafkalog.conf:/usr/share/logstash/pipeline/logstash.conf -v /eleven/logstash/log/:/home/public/  -v /eleven/logstash/logstash.yml:/usr/share/logstash/config/logstash.yml logstash:7.2.0
+docker run --rm -it --privileged=true -p 9600:9600  -d -v /TurboA/logstash/kafkalog.conf:/usr/share/logstash/pipeline/logstash.conf -v /TurboA/logstash/log/:/home/public/  -v /TurboA/logstash/logstash.yml:/usr/share/logstash/config/logstash.yml logstash:7.2.0
 
 Kibana配置(ES配置)
 docker run -p 5601:5601 -d -e ELASTICSEARCH_URL=http://192.168.3.230:9200   -e ELASTICSEARCH_HOSTS=http://192.168.3.230:9200 kibana:7.2.0  
@@ -110,7 +110,7 @@ using log4net.Kafka.Core
       <topic value="kafkalog" />
     </KafkaSettings>
     <layout type="log4net.Kafka.Core.KafkaLogLayout,log4net.Kafka.Core" >
-      <appid value="Zhaoxi.MSACommerce.BrandMicroservice" />
+      <appid value="TurboA.MSACommerce.BrandMicroservice" />
     </layout>
   </appender>
   <root>

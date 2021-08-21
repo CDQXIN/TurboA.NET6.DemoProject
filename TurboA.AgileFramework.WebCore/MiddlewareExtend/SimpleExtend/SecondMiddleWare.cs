@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore.MiddlewareExtend.SimpleExtend
+namespace TurboA.AgileFramework.WebCore.MiddlewareExtend.SimpleExtend
 {
     /// <summary>
     /// 1  实现IMiddleware，就不能有参数--而且还得IOC注册

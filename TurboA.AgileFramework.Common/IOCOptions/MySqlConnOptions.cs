@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Zhaoxi.AgileFramework.Common.IOCOptions
+namespace TurboA.AgileFramework.Common.IOCOptions
 {
 	public class MySqlConnOptions
 	{

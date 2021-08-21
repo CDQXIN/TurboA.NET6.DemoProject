@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.MSACommerce.Core
+namespace TurboA.MSACommerce.Core
 {
 	public static class SnowflakeHelper
 	{

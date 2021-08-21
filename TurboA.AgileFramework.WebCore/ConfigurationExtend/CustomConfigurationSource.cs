@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore.ConfigurationExtend
+namespace TurboA.AgileFramework.WebCore.ConfigurationExtend
 {
     /// <summary>
     /// 数据源：负责创建ConfigurationProvider--数据提供程序

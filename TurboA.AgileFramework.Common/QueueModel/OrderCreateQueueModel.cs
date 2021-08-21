@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.Common.QueueModel
+namespace TurboA.AgileFramework.Common.QueueModel
 {
     /// <summary>
     /// 下单成功后的实体

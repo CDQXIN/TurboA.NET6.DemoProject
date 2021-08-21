@@ -6,9 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Zhaoxi.NET6.DemoProject.Models;
+using TurboA.NET6.DemoProject.Models;
 
-namespace Zhaoxi.NET6.DemoProject.Controllers
+namespace TurboA.NET6.DemoProject.Controllers
 {
     public class OptionController : Controller
     {

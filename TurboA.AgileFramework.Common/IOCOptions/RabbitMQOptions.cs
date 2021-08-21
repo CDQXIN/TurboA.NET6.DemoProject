@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.Common.IOCOptions
+namespace TurboA.AgileFramework.Common.IOCOptions
 {
     public class RabbitMQOptions
     {
@@ -41,38 +41,38 @@ namespace Zhaoxi.AgileFramework.Common.IOCOptions
 
     public class RabbitMQExchangeQueueName
     {
-        public static readonly string SKUCQRS_Exchange = "Zhaoxi.MSACormmerce.SKUCQRS.Exchange";
-        public static readonly string SKUCQRS_Queue_StaticPage = "Zhaoxi.MSACormmerce.SKUCQRS.Queue.StaticPage";
-        public static readonly string SKUCQRS_Queue_ESIndex = "Zhaoxi.MSACormmerce.SKUCQRS.Queue.ESIndex";
+        public static readonly string SKUCQRS_Exchange = "TurboA.MSACormmerce.SKUCQRS.Exchange";
+        public static readonly string SKUCQRS_Queue_StaticPage = "TurboA.MSACormmerce.SKUCQRS.Queue.StaticPage";
+        public static readonly string SKUCQRS_Queue_ESIndex = "TurboA.MSACormmerce.SKUCQRS.Queue.ESIndex";
 
 
-        public static readonly string SKUWarmup_Exchange = "Zhaoxi.MSACormmerce.Warmup.Exchange";
-        public static readonly string SKUWarmup_Queue_StaticPage = "Zhaoxi.MSACormmerce.Warmup.Queue.StaticPage";
-        public static readonly string SKUWarmup_Queue_ESIndex = "Zhaoxi.MSACormmerce.Warmup.Queue.ESIndex";
+        public static readonly string SKUWarmup_Exchange = "TurboA.MSACormmerce.Warmup.Exchange";
+        public static readonly string SKUWarmup_Queue_StaticPage = "TurboA.MSACormmerce.Warmup.Queue.StaticPage";
+        public static readonly string SKUWarmup_Queue_ESIndex = "TurboA.MSACormmerce.Warmup.Queue.ESIndex";
 
         /// <summary>
         /// 订单创建后的交换机
         /// </summary>
-        public static readonly string OrderCreate_Exchange = "Zhaoxi.MSACormmerce.OrderCreate.Exchange";
-        public static readonly string OrderCreate_Queue_CleanCart = "Zhaoxi.MSACormmerce.OrderCreate.Queue.CleanCart";
+        public static readonly string OrderCreate_Exchange = "TurboA.MSACormmerce.OrderCreate.Exchange";
+        public static readonly string OrderCreate_Queue_CleanCart = "TurboA.MSACormmerce.OrderCreate.Queue.CleanCart";
 
         /// <summary>
         /// 订单创建后的交换机,支付状态的
         /// </summary>
-        public static readonly string OrderPay_Exchange = "Zhaoxi.MSACormmerce.OrderPay.Exchange";
-        public static readonly string OrderPay_Queue_RefreshPay = "Zhaoxi.MSACormmerce.OrderPay.Queue.RefreshPay";
+        public static readonly string OrderPay_Exchange = "TurboA.MSACormmerce.OrderPay.Exchange";
+        public static readonly string OrderPay_Queue_RefreshPay = "TurboA.MSACormmerce.OrderPay.Queue.RefreshPay";
 
         /// <summary>
         /// 创建订单后的延时队列配置
         /// </summary>
-        public static readonly string OrderCreate_Delay_Exchange = "Zhaoxi.MSACormmerce.OrderCreate.DelayExchange";
-        public static readonly string OrderCreate_Delay_Queue_CancelOrder = "Zhaoxi.MSACormmerce.OrderCreate.DelayQueue.CancelOrder";
+        public static readonly string OrderCreate_Delay_Exchange = "TurboA.MSACormmerce.OrderCreate.DelayExchange";
+        public static readonly string OrderCreate_Delay_Queue_CancelOrder = "TurboA.MSACormmerce.OrderCreate.DelayQueue.CancelOrder";
 
         /// <summary>
         /// 秒杀异步的
         /// </summary>
-        public static readonly string Seckill_Exchange = "Zhaoxi.MSACormmerce.Seckill.Exchange";
-        public static readonly string Seckill_Order_Queue = "Zhaoxi.MSACormmerce.Seckill.Order.Queue";
+        public static readonly string Seckill_Exchange = "TurboA.MSACormmerce.Seckill.Exchange";
+        public static readonly string Seckill_Order_Queue = "TurboA.MSACormmerce.Seckill.Order.Queue";
 
 
         /// <summary>

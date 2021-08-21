@@ -7,8 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-[assembly: HostingStartup(typeof(Zhaoxi.AgileFramework.WebCore.StartupExtend.CustomHostingStartup))]
-namespace Zhaoxi.AgileFramework.WebCore.StartupExtend
+[assembly: HostingStartup(typeof(TurboA.AgileFramework.WebCore.StartupExtend.CustomHostingStartup))]
+namespace TurboA.AgileFramework.WebCore.StartupExtend
 {
     /// <summary>
     /// 必须实现IHostingStartup接口

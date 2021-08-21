@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Zhaoxi.AgileFramework.Pandora.CustomAOP
+namespace TurboA.AgileFramework.Pandora.CustomAOP
 {
     /// <summary>
     /// 普通类

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace Zhaoxi.AspNetCore31.Demo.Utility
+namespace TurboA.AspNetCore31.Demo.Utility
 {
     public class VerifyCodeHelper
     {

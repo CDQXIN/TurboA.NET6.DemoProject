@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.NET6.TricksDemo.ActionInit
+namespace TurboA.NET6.TricksDemo.ActionInit
 {
     /// <summary>
     /// 提供默认值

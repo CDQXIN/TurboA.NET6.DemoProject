@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AspNetCore31.Demo.Utility
+namespace TurboA.AspNetCore31.Demo.Utility
 {
     /// <summary>
     /// 

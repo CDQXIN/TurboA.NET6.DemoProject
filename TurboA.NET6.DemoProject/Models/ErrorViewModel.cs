@@ -1,6 +1,6 @@
 using System;
 
-namespace Zhaoxi.NET6.DemoProject.Models
+namespace TurboA.NET6.DemoProject.Models
 {
     public class ErrorViewModel
     {

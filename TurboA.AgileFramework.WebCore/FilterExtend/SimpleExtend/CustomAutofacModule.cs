@@ -6,10 +6,10 @@
 //using System.Linq;
 //using System.Reflection;
 //using System.Threading.Tasks;
-//using Zhaoxi.NET6.Interface;
-//using Zhaoxi.NET6.Service;
+//using TurboA.NET6.Interface;
+//using TurboA.NET6.Service;
 
-//namespace Zhaoxi.AspNetCore31.Demo.Utility
+//namespace TurboA.AspNetCore31.Demo.Utility
 //{
 //    public class CustomAutofacModule : Autofac.Module
 //    {

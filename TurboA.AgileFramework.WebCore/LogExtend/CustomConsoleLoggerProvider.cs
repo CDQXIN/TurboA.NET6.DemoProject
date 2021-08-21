@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore.LogExtend
+namespace TurboA.AgileFramework.WebCore.LogExtend
 {
     /// <summary>
     /// 驱动程序：为每个类都创建一个写日志的实例，保存在字典里面

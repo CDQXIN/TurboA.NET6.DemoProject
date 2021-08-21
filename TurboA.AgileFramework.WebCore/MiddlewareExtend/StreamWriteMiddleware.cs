@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore.MiddlewareExtend
+namespace TurboA.AgileFramework.WebCore.MiddlewareExtend
 {
     /// <summary>
     /// 修改Stream
     /// http://localhost:5000/api/webapi/post
-    /// Postman--Post---Body有个Name=Eleven
+    /// Postman--Post---Body有个Name=TurboA
     /// </summary>
     public class StreamWriteMiddleware
     {

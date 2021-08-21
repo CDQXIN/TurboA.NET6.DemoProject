@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.NET6.DemoProject.Models
+namespace TurboA.NET6.DemoProject.Models
 {
     /// <summary>
     /// 测试Option  必须是无参数构造函数

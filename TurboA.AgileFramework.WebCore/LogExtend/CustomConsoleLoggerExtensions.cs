@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore.LogExtend
+namespace TurboA.AgileFramework.WebCore.LogExtend
 {
     /// <summary>
     /// 扩展个方法，让ILoggerFactory去AddProvider

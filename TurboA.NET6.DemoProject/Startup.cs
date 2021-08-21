@@ -13,19 +13,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Zhaoxi.AgileFramework.Pandora.IOCReplace;
-using Zhaoxi.AgileFramework.WebCore.IOCExtend;
-using Zhaoxi.AgileFramework.WebCore.LogExtend;
-using Zhaoxi.AgileFramework.WebCore.MiddlewareExtend;
-using Zhaoxi.AgileFramework.WebCore.MiddlewareExtend.SimpleExtend;
-using Zhaoxi.AgileFramework.WebCore.MiddlewareExtend.StandardMiddleware;
-using Zhaoxi.AgileFramework.WebCore.StartupExtend;
-using Zhaoxi.NET6.DemoProject.Models;
-using Zhaoxi.NET6.DemoProject.Utility;
-using Zhaoxi.NET6.Interface;
-using Zhaoxi.NET6.Service;
+using TurboA.AgileFramework.Pandora.IOCReplace;
+using TurboA.AgileFramework.WebCore.IOCExtend;
+using TurboA.AgileFramework.WebCore.LogExtend;
+using TurboA.AgileFramework.WebCore.MiddlewareExtend;
+using TurboA.AgileFramework.WebCore.MiddlewareExtend.SimpleExtend;
+using TurboA.AgileFramework.WebCore.MiddlewareExtend.StandardMiddleware;
+using TurboA.AgileFramework.WebCore.StartupExtend;
+using TurboA.NET6.DemoProject.Models;
+using TurboA.NET6.DemoProject.Utility;
+using TurboA.NET6.Interface;
+using TurboA.NET6.Service;
 
-namespace Zhaoxi.NET6.DemoProject
+namespace TurboA.NET6.DemoProject
 {
     /// <summary>
     /// 初始化配置
@@ -129,7 +129,7 @@ namespace Zhaoxi.NET6.DemoProject
         ///// 
         ///// </summary>
         ///// <param name="containerBuilder"></param>
-        //public void ConfigureContainer(ZhaoxiContainerBuilder containerBuilder)
+        //public void ConfigureContainer(TurboAContainerBuilder containerBuilder)
         //{
         //    //containerBuilder.RegisterType<ITestServiceA, TestServiceA>();
         //    //containerBuilder.RegisterType<ITestServiceB, TestServiceB>();
@@ -287,9 +287,9 @@ namespace Zhaoxi.NET6.DemoProject
             ////根据条件指定中间件 指向终结点，没有Next
             ////Map是固定根据Path检测  MapWhen可以多条件
             //app.Map("/Test", MapTest);
-            //app.Map("/Eleven", a => a.Run(async context =>
+            //app.Map("/TurboA", a => a.Run(async context =>
             //{
-            //    await context.Response.WriteAsync($"This is Advanced Eleven Site");
+            //    await context.Response.WriteAsync($"This is Advanced TurboA Site");
             //}));
             //app.MapWhen(context =>
             //{
@@ -312,7 +312,7 @@ namespace Zhaoxi.NET6.DemoProject
             ////UseMiddlerware 类--反射找
             //app.UseMiddleware<FirstMiddleWare>();
             //app.UseMiddleware<SecondMiddleWare>();
-            //app.UseMiddleware<ThreeMiddleWare>("Eleven Zhaoxi.NET6.DemoProject");
+            //app.UseMiddleware<ThreeMiddleWare>("TurboA TurboA.NET6.DemoProject");
             #endregion
 
             #region 标准Middleware
@@ -418,7 +418,7 @@ namespace Zhaoxi.NET6.DemoProject
             //    c =>
             //{
             //    c.LogLevel = LogLevel.Debug;
-            //    c.Init("Eleven");
+            //    c.Init("TurboA");
             //});
             #endregion
 

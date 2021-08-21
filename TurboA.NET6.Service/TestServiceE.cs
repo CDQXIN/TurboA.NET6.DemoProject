@@ -1,7 +1,7 @@
-﻿using Zhaoxi.NET6.Interface;
+﻿using TurboA.NET6.Interface;
 using System;
 
-namespace Zhaoxi.NET6.Service
+namespace TurboA.NET6.Service
 {
     public class TestServiceE : ITestServiceE
     {

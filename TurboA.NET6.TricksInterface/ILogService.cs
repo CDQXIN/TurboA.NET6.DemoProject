@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Zhaoxi.NET6.TricksInterface
+namespace TurboA.NET6.TricksInterface
 {
     public interface ILogService
     {

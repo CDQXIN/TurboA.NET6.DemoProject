@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.Common.Models
+namespace TurboA.AgileFramework.Common.Models
 {
     /// <summary>
     /// 写入分布式日志需要的字段

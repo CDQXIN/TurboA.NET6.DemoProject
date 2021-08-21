@@ -5,7 +5,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.AgileFramework.WebCore.MiddlewareExtend
+namespace TurboA.AgileFramework.WebCore.MiddlewareExtend
 {
     /// <summary>
     /// 中间件--Invoke---Next---放在前面

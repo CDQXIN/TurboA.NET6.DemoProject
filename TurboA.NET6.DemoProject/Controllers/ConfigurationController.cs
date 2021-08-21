@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.NET6.DemoProject.Controllers
+namespace TurboA.NET6.DemoProject.Controllers
 {
     public class ConfigurationController : Controller
     {

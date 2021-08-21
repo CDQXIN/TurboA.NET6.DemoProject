@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Zhaoxi.MSACommerce.Core
+namespace TurboA.MSACommerce.Core
 {
 	/// <summary>
 	/// 加密用的
