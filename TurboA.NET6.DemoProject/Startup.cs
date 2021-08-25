@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -14,14 +15,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TurboA.AgileFramework.Pandora.IOCReplace;
+using TurboA.AgileFramework.WebCore.AuthenticationExtend;
 using TurboA.AgileFramework.WebCore.IOCExtend;
 using TurboA.AgileFramework.WebCore.LogExtend;
 using TurboA.AgileFramework.WebCore.MiddlewareExtend;
 using TurboA.AgileFramework.WebCore.MiddlewareExtend.SimpleExtend;
 using TurboA.AgileFramework.WebCore.MiddlewareExtend.StandardMiddleware;
 using TurboA.AgileFramework.WebCore.StartupExtend;
+using TurboA.NET6.DemoProject.CustomAuth;
 using TurboA.NET6.DemoProject.Models;
 using TurboA.NET6.DemoProject.Utility;
+using TurboA.NET6.DemoProject.Utility.RouteExtend;
 using TurboA.NET6.Interface;
 using TurboA.NET6.Service;
 
@@ -121,6 +125,247 @@ namespace TurboA.NET6.DemoProject
             //    options.Configuration = "127.0.0.1:6379";
             //    options.InstanceName = "RedisDistributedCache";
             //});
+            #endregion
+
+            #region 路由
+            services.AddDynamicRoute();
+            #endregion
+
+            #region 鉴权授权  同时生效只有一个
+            #region 基本鉴权流程---配置
+            ////services.AddAuthentication();//没有任何Scheme不行，程序要求有DefaultScheme
+            //services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)//需要鉴权，且必须指定默认方案
+            //         .AddCookie();//使用Cookie的方式
+
+            //services.CustomAddAuthenticationCore();//替换下IOC,方便调试和扩展
+            #endregion
+
+            #region 自定义鉴权Handler
+            ////使用Url参数传递用户信息
+            //services.AddAuthentication(options =>
+            //{
+            //    options.AddScheme<UrlTokenAuthenticationHandler>(UrlTokenAuthenticationDefaults.AuthenticationScheme, "UrlTokenScheme-Demo");
+
+            //    options.DefaultAuthenticateScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;//不能少
+            //    options.DefaultChallengeScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+            //    options.DefaultSignInScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+            //    options.DefaultForbidScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+            //    options.DefaultSignOutScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+            //});//覆盖默认注册,自定义解析Handler
+
+            ////services.AddAuthentication(UrlTokenAuthenticationDefaults.AuthenticationScheme)
+            ////.AddCookie()
+
+            ////services.CustomAddAuthenticationCore();//替换下IOC,方便调试和扩展
+
+            #endregion
+
+            #region 自定义鉴权handler 堆叠Cookie--多handler
+            services.AddAuthentication(options =>//覆盖默认注册,自定义解析Handler
+            {
+                options.AddScheme<UrlTokenAuthenticationHandler>(UrlTokenAuthenticationDefaults.AuthenticationScheme, "UrlTokenScheme-Demo");
+                options.DefaultAuthenticateScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;//不能少
+                options.DefaultChallengeScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultForbidScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignOutScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+            })
+               .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme) //再配置个Cookie解析
+                ;
+            services.CustomAddAuthenticationCore();//替换下IOC,方便调试和扩展
+            #endregion
+
+            #region 自定义鉴权handler 堆叠Cookie--多handler---加上授权策略
+            //services.AddAuthentication(options =>//覆盖默认注册,自定义解析Handler
+            //{
+            //    options.AddScheme<UrlTokenAuthenticationHandler>(UrlTokenAuthenticationDefaults.AuthenticationScheme, "UrlTokenScheme-Demo");
+            //    options.DefaultAuthenticateScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;//不能少
+            //    options.DefaultChallengeScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+            //    options.DefaultSignInScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+            //    options.DefaultForbidScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+            //    options.DefaultSignOutScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+            //})
+            //   .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme) //再配置个Cookie解析
+            //    ;
+            //services.CustomAddAuthenticationCore();//替换下IOC,方便调试和扩展
+
+
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("DateOfBirthPolicy", policyBuilder => policyBuilder.Requirements.Add(new DateOfBirthRequirement()));
+            //    options.AddPolicy("CountryChinesePolicy", policyBuilder => policyBuilder.Requirements.Add(new CountryRequirement("Chinese")));
+            //    options.AddPolicy("CountryChinaPolicy", policyBuilder => policyBuilder.Requirements.Add(new CountryRequirement("China")));
+
+            //    options.AddPolicy("DoubleEmail", policyBuilder => policyBuilder.Requirements.Add(new DoubleEmailRequirement()));
+            //});
+            //services.AddSingleton<IAuthorizationHandler, ZhaoxiMailHandler>();
+            //services.AddSingleton<IAuthorizationHandler, QQMailHandler>();
+
+            //services.AddSingleton<IAuthorizationHandler, DateOfBirthRequirementHandler>();
+            //services.AddSingleton<IAuthorizationHandler, CountryRequirementHandler>();
+            #endregion
+
+            #region 多handler  
+            //同Scheme只能一个
+            //services.AddAuthentication(options =>
+            //    {
+            //        options.AddScheme<UrlTokenAuthenticationHandler>(UrlTokenAuthenticationDefaults.AuthenticationScheme, "UrlTokenScheme-Demo");
+            //        options.DefaultAuthenticateScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;//不能少
+            //        options.DefaultChallengeScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+            //        options.DefaultSignInScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+            //        options.DefaultForbidScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+            //        options.DefaultSignOutScheme = UrlTokenAuthenticationDefaults.AuthenticationScheme;
+
+            //        options.RequireAuthenticatedSignIn = false;
+            //    })
+            //;
+            //services.AddAuthentication(options =>
+            // {
+            //     options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme + "1";//不能少
+            //     options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme + "1";
+            //     options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme + "1";
+            //     options.DefaultForbidScheme = CookieAuthenticationDefaults.AuthenticationScheme + "1";
+            //     options.DefaultSignOutScheme = CookieAuthenticationDefaults.AuthenticationScheme + "1";
+
+            //     options.RequireAuthenticatedSignIn = false;
+            // })
+            //.AddCookie(CookieAuthenticationDefaults.AuthenticationScheme + "1", options =>
+            //{
+            //    options.LoginPath = "/Auth/Login1";
+            //    options.Cookie.Name = "www1";
+            //})
+            //;
+            //.AddCookie(CookieAuthenticationDefaults.AuthenticationScheme + "2", options =>
+            //{
+            //    options.LoginPath = "/Auth/Login2";
+            //    options.Cookie.Name = "www2";
+            //})
+            //.AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+            //{
+            //    options.TokenValidationParameters = new TokenValidationParameters
+            //    {
+            //        ValidateIssuer = true,
+            //        ValidateAudience = true,
+            //        ValidateLifetime = true,
+            //        ValidateIssuerSigningKey = true,
+            //        ValidIssuer = "Zhaoxi.NET6.DemoProject",
+            //        ValidAudience = "Zhaoxi.NET6.DemoProject",
+            //        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Eleven.Zhaoxi.NET6.DemoProject"))
+            //    };
+            //});
+            #endregion
+
+            #region Filter方式
+            //services.AddAuthentication()
+            //.AddCookie();
+            #endregion
+
+            #region 基于Cookies授权---最基础AddAuthorization--策略+角色授权
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;//不能少,signin signout Authenticate都是基于Scheme
+            //    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            //})
+            //.AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
+            //{
+            //    options.LoginPath = "/Authorization/LoginPath";
+            //    options.AccessDeniedPath = "/Authorization/AccessDeniedPath";
+            //});
+            ////services.AddAuthorization();//在AddController里面已经有了
+            #endregion
+
+            #region 替换IOC注册，理解流程---基于Cookies授权---最基础AddAuthorization--策略+角色授权
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;//不能少,signin signout Authenticate都是基于Scheme
+            //    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            //})
+            //.AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
+            //{
+            //    options.LoginPath = "/Authorization/LoginPath";
+            //    options.AccessDeniedPath = "/Authorization/AccessDeniedPath";
+            //});
+            ////services.AddAuthorization();//在AddController里面已经有了
+            //services.CustomAddAuthorization();
+            #endregion
+
+            #region Cookie鉴权+Policy+Requirements+IAuthorizationHandler扩展
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;//不能少,signin signout Authenticate都是基于Scheme
+            //    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            //})
+            //.AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
+            //{
+            //    options.LoginPath = "/Authorization/LoginPath";
+            //    options.AccessDeniedPath = "/Authorization/AccessDeniedPath";
+            //});
+
+            ////定义一个共用的AuthorizationPolicy
+            //var qqEmailPolicy = new AuthorizationPolicyBuilder().AddRequirements(new QQEmailRequirement()).Build();
+
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("AdminPolicy",
+            //        policyBuilder => policyBuilder
+            //        .RequireRole("Admin")//Claim的Role是Admin
+            //        .RequireUserName("Eleven")//Claim的Name是Eleven
+            //        .RequireClaim(ClaimTypes.Email)//必须有某个Cliam
+            //        .AddAuthenticationSchemes(CookieAuthenticationDefaults.AuthenticationScheme)//可以从这里解析
+            //        .AddRequirements(new QQEmailRequirement())//QQ邮箱要求
+            //        .Combine(qqEmailPolicy)//QQ邮箱要求  同上
+            //        .RequireAssertion(context =>
+            //            context.User.HasClaim(c => c.Type == ClaimTypes.Role)
+            //            && context.User.Claims.First(c => c.Type.Equals(ClaimTypes.Role)).Value == "Admin")//根据授权处理上下文自定义规则检验
+            //        );//内置
+
+            //    options.AddPolicy("DoubleEmail", policyBuilder => policyBuilder.Requirements.Add(new DoubleEmailRequirement()));
+            //});
+            //services.AddSingleton<IAuthorizationHandler, ZhaoxiMailHandler>();
+            //services.AddSingleton<IAuthorizationHandler, QQMailHandler>();
+            #endregion
+
+            #region 基于Cookie鉴权
+            //services.AddScoped<ITicketStore, MemoryCacheTicketStore>();
+            //services.AddMemoryCache();
+            //////services.AddDistributedRedisCache(options =>
+            //////{
+            //////    options.Configuration = "127.0.0.1:6379";
+            //////    options.InstanceName = "RedisDistributedSession";
+            //////});
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;//不能少
+            //    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            //    options.DefaultChallengeScheme = "Cookie/Login";
+            //})
+            //.AddCookie(options =>
+            //{
+            //    //信息存在服务端--把key写入cookie--类似session
+            //    options.SessionStore = services.BuildServiceProvider().GetService<ITicketStore>();
+            //    options.Events = new CookieAuthenticationEvents()
+            //    {
+            //        OnSignedIn = new Func<CookieSignedInContext, Task>(
+            //            async context =>
+            //            {
+            //                Console.WriteLine($"{context.Request.Path} is OnSignedIn");
+            //                await Task.CompletedTask;
+            //            }),
+            //        OnSigningIn = async context =>
+            //         {
+            //             Console.WriteLine($"{context.Request.Path} is OnSigningIn");
+            //             await Task.CompletedTask;
+            //         },
+            //        OnSigningOut = async context =>
+            //        {
+            //            Console.WriteLine($"{context.Request.Path} is OnSigningOut");
+            //            await Task.CompletedTask;
+            //        }
+            //    };//扩展事件
+            //});
+
+            ////new AuthenticationBuilder().AddCookie()
+            #endregion
             #endregion
         }
 
@@ -422,19 +667,112 @@ namespace TurboA.NET6.DemoProject
             //});
             #endregion
 
-            //app.UseHttpsRedirection();
-            //app.UseSession();//要用Session
-            app.UseStaticFiles();
+            app.UseHttpsRedirection();
 
+            #region 静态文件
+            //app.UseRefuseStealing();
+
+            app.UseStaticFiles();//静态文件处理中间件：处理静态文件的请求
+
+            //app.UseRefuseStealing();//写在这里就没用了，因为前面已经处理了呀--很多中间件的顺序都是有原因的
+
+            //app.UseStaticFiles(new StaticFileOptions()
+            //{
+            //    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot"))
+            //});//dotnet  和dotnet run
+
+            //app.UseDirectoryBrowser(new DirectoryBrowserOptions
+            //{
+            //    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")),
+            //    RequestPath = "/CsutomImages"
+            //});
+            #endregion
+
+            #region Session
+            //app.UseSession();//不是默认的，默认都没有Session，要用Session
+            #endregion
+
+            #region UseRouting
             app.UseRouting();
+            #endregion
 
+            #region between UseRouting and UseEndpoints
+            ////其实就是缓存，可以更早缓存
+            //app.Use(next =>
+            //{
+            //    Console.WriteLine("This is middleware between UseRouting and UseEndpoints");
+            //    return new RequestDelegate(
+            //        async context =>
+            //        {
+            //            await Task.Run(() =>
+            //            {
+            //                Console.WriteLine("************************************************************");
+            //                Console.WriteLine("This is middleware between UseRouting and UseEndpoints start");
+            //                //throw new Exception("middleware exception。。");
+
+            //                var endpoint = context.GetEndpoint();
+
+            //                //context.Features.Set<IEN>//还可以做映射处理，设置控制器action
+            //                //或者额外加点参数信息 context.Items["aaa"] = "Eleven";
+            //                if (endpoint is RouteEndpoint routeEndpoint)
+            //                {
+            //                    Console.WriteLine("Endpoint has route pattern: " +
+            //                        routeEndpoint.RoutePattern.RawText);
+            //                }
+            //                if (endpoint != null)
+            //                {
+            //                    Console.WriteLine($"{endpoint.DisplayName}");
+            //                    Console.WriteLine($"{string.Join(";", endpoint.Metadata)}");
+            //                }
+            //                else
+            //                {
+            //                    //没找到处理的  可以自行扩展处理动作--new一个404的处理
+            //                }
+            //            });
+            //            await next.Invoke(context);
+            //            await Task.Run(() =>
+            //            {
+            //                Console.WriteLine("This is middleware between UseRouting and UseEndpoints end");
+            //                Console.WriteLine("************************************************************");
+            //            });
+            //        });
+            //});
+            #endregion
+
+            #region 鉴权授权
+            #region 默认就有
+            //app.UseAuthorization();//默认就有--Add在AddController就已经添加了
+            #endregion
+
+            #region 标准组合
+            app.UseAuthentication();//默认框架没有--就必须配套Add
             app.UseAuthorization();
+            #endregion
+
+            #region 替换组合
+            //app.CustomUseAuthentication();
+            //app.CustomUseAuthorization();
+            #endregion
+
+            #endregion
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                    name: "regular",
+                    pattern: "{controller=Home}/{action=Index}/{year:range(2019,2021)}-{month:range(1,12)}");
+
+
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                //endpoints.MapAreaControllerRoute(
+                //    name: "areas", "areas",
+                //    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
             });
             #endregion
         }

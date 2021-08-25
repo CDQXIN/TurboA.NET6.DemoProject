@@ -9,3 +9,4 @@ E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.Common\obj\Debug\net5.0\TurboA.
 E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.Common\obj\Debug\net5.0\TurboA.AgileFramework.Common.dll
 E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.Common\obj\Debug\net5.0\ref\TurboA.AgileFramework.Common.dll
 E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.Common\obj\Debug\net5.0\TurboA.AgileFramework.Common.pdb
+E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.Common\obj\Debug\net5.0\TurboA.AgileFramework.Common.csproj.AssemblyReference.cache

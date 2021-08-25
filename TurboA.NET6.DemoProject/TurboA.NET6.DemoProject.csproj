@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -17,9 +17,27 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Authorization\Index.cshtml" />
+    <None Include="Views\Authorization\Info.cshtml" />
+    <None Include="Views\Authorization\InfoAdmin.cshtml" />
+    <None Include="Views\Authorization\InfoAdminPolicy.cshtml" />
+    <None Include="Views\Authorization\InfoAdminUser.cshtml" />
+    <None Include="Views\Authorization\InfoCustomScheme.cshtml" />
+    <None Include="Views\Authorization\InfoDoubleEmail.cshtml" />
+    <None Include="Views\Authorization\InfoQQEmail.cshtml" />
+    <None Include="Views\Authorization\InfoUser.cshtml" />
+    <None Include="Views\Authorization\InfoUserPolicy.cshtml" />
+    <None Include="Views\Auth\Index.cshtml" />
+    <None Include="Views\Route\Data.cshtml" />
+    <None Include="Views\Route\Index.cshtml" />
+    <None Include="Views\Route\PageInfo.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
     <PackageReference Include="log4net" Version="2.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="5.0.3" />

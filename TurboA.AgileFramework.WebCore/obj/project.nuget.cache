@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "d27rEmBk4fPwE905zm08TZJkn0BljVDNzVU3naEa4BTVeWhqW5ihhnBxhWt3HcWZoVMd2jhax4btFVpijCA94Q==",
+  "dgSpecHash": "GU+kBpcmJ1eyM3zMun+tmU5Z8jiXXP8OlYHRwgBKhJSOSSXqIDf256/UPzkqwE59nSdCEzLJOxq5SEeLAG5+AQ==",
   "success": true,
   "projectFilePath": "E:\\TurboA.NET6.DemoProject\\TurboA.AgileFramework.WebCore\\TurboA.AgileFramework.WebCore.csproj",
   "expectedPackageFiles": [
@@ -35,6 +35,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.1.0\\microsoft.dotnet.platformabstractions.2.1.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
