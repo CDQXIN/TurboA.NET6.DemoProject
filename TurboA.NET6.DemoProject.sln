@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurboA.NET6.Service", "Turb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurboA.AgileFramework.Pandora", "TurboA.AgileFramework.Pandora\TurboA.AgileFramework.Pandora.csproj", "{0EA74D12-4E02-44DB-BDC9-0517CCE88979}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurboA.NET6.AuthenticationCenter", "TurboA.NET6.AuthenticationCenter\TurboA.NET6.AuthenticationCenter.csproj", "{14C2E983-841E-4C12-9141-F187441C8D7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{0EA74D12-4E02-44DB-BDC9-0517CCE88979}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EA74D12-4E02-44DB-BDC9-0517CCE88979}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EA74D12-4E02-44DB-BDC9-0517CCE88979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14C2E983-841E-4C12-9141-F187441C8D7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C2E983-841E-4C12-9141-F187441C8D7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C2E983-841E-4C12-9141-F187441C8D7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C2E983-841E-4C12-9141-F187441C8D7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

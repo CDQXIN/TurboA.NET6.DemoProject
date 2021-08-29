@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "TurboA.AgileFramework.Common/1.0.0": {
+        "runtime": {
+          "TurboA.AgileFramework.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TurboA.AgileFramework.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

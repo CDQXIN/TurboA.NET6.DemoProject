@@ -198,5 +198,19 @@ namespace TurboA.NET6.DemoProject.Controllers
             return View();
         }
         #endregion
+
+        #region 源码解读
+
+        //[Authorize(AuthenticationSchemes = "Cookies", Policy = "AdminPolicy", Roles = "Admin,User")]
+
+        [Authorize(AuthenticationSchemes = "Cookies,UrlTokenScheme", Policy = "MutiPolicy", Roles = "Admin,User")]
+        public IActionResult InfoSource()
+        {
+            Console.WriteLine($"InfoSource: {base.HttpContext.Items["__AuthorizationMiddlewareWithEndpointInvoked"]}");
+
+            return View();
+        }
+
+        #endregion
     }
 }
