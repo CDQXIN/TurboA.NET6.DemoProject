@@ -6,3 +6,4 @@ E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.Common\obj\Debug\netcoreapp3.1\
 E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.Common\obj\Debug\netcoreapp3.1\TurboA.AgileFramework.Common.csproj.CoreCompileInputs.cache
 E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.Common\obj\Debug\netcoreapp3.1\TurboA.AgileFramework.Common.dll
 E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.Common\obj\Debug\netcoreapp3.1\TurboA.AgileFramework.Common.pdb
+E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.Common\obj\Debug\netcoreapp3.1\TurboA.AgileFramework.Common.csproj.AssemblyReference.cache

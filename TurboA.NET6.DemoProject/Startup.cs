@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc.Controllers;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -21,6 +22,7 @@ using TurboA.AgileFramework.WebCore.LogExtend;
 using TurboA.AgileFramework.WebCore.MiddlewareExtend;
 using TurboA.AgileFramework.WebCore.MiddlewareExtend.SimpleExtend;
 using TurboA.AgileFramework.WebCore.MiddlewareExtend.StandardMiddleware;
+using TurboA.AgileFramework.WebCore.RouteExtend;
 using TurboA.AgileFramework.WebCore.StartupExtend;
 using TurboA.NET6.DemoProject.CustomAuth;
 using TurboA.NET6.DemoProject.Models;
@@ -129,6 +131,11 @@ namespace TurboA.NET6.DemoProject
 
             #region 路由
             services.AddDynamicRoute();
+
+            services.AddRouting(options =>
+            {
+                options.ConstraintMap.Add("GenderConstraint", typeof(CustomGenderRouteConstraint));
+            });
             #endregion
 
             #region 鉴权授权  同时生效只有一个
@@ -756,23 +763,79 @@ namespace TurboA.NET6.DemoProject
 
             #endregion
 
+            #region 获取下路由匹配后的路由信息
+            app.Use(next => context =>
+            {
+                var endpoint = context.GetEndpoint();
+                if (endpoint is null)
+                {
+                    return next.Invoke(context);//没命中就继续
+                    //return Task.CompletedTask;//没命中就无任何动作
+                }
+
+                Console.WriteLine($"Endpoint: {endpoint.DisplayName}");
+
+                if (endpoint is RouteEndpoint routeEndpoint)
+                {
+                    Console.WriteLine(routeEndpoint.RoutePattern.Format());
+                }
+
+                foreach (var metadata in endpoint.Metadata)
+                {
+                    Console.WriteLine($"Endpoint has metadata: {metadata}");
+                }
+                return next.Invoke(context);
+            });
+            #endregion
+
+            //Microsoft.AspNetCore.Mvc.Routing.DynamicRouteValueTransformer
             app.UseEndpoints(endpoints =>
             {
+                #region 路由扩展
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                name: "about-route",
+                pattern: "about",
+                defaults: new { controller = "Route", action = "About" }
+                );//指向路由
+
+                //endpoints.UseMapGetConstraint();
+
+                endpoints.MapControllerRoute(
+                name: "range",
+                pattern: "{controller=Home}/{action=Index}/{year:range(2019,2021)}-{month:range(1,12)}");
+
+                //伪静态
+                //endpoints.MapControllerRoute(
+                //    name: "static",
+                //    pattern: "Item/{id:int}.html",
+                //    defaults: new { controller = "Route", action = "PageInfo" });
+
+
                 endpoints.MapControllerRoute(
                     name: "regular",
-                    pattern: "{controller=Home}/{action=Index}/{year:range(2019,2021)}-{month:range(1,12)}");
+                    pattern: "{controller}/{action}/{year}-{month}",
+                    constraints: new { year = "^\\d{4}$", month = "^\\d{2}$" },
+                    defaults: new { controller = "Home", action = "Index", });
 
+                endpoints.UseDynamicRouteDefault();
 
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                #endregion
 
                 //endpoints.MapAreaControllerRoute(
                 //    name: "areas", "areas",
                 //    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
+                       name: "default",
+                       pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                //MapGet指定处理方式---MiniAPI
+                endpoints.MapGet("/ElevenTest", async context =>
+                {
+                    await context.Response.WriteAsync($"This is ElevenTest");
+                });
+                //.RequireAuthorization();//要求授权
+                //.WithMetadata(new AuditPolicyAttribute());//路由命中的话，可以多加个特性
             });
             #endregion
         }

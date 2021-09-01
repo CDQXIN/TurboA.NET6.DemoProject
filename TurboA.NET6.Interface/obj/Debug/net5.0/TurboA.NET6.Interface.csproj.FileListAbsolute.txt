@@ -9,3 +9,4 @@ E:\TurboA.NET6.DemoProject\TurboA.NET6.Interface\obj\Debug\net5.0\TurboA.NET6.In
 E:\TurboA.NET6.DemoProject\TurboA.NET6.Interface\obj\Debug\net5.0\TurboA.NET6.Interface.dll
 E:\TurboA.NET6.DemoProject\TurboA.NET6.Interface\obj\Debug\net5.0\ref\TurboA.NET6.Interface.dll
 E:\TurboA.NET6.DemoProject\TurboA.NET6.Interface\obj\Debug\net5.0\TurboA.NET6.Interface.pdb
+E:\TurboA.NET6.DemoProject\TurboA.NET6.Interface\obj\Debug\net5.0\TurboA.NET6.Interface.csproj.AssemblyReference.cache
