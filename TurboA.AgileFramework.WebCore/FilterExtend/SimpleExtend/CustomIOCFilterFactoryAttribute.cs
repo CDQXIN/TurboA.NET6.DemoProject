@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TurboA.AspNetCore31.Demo.Utility
+namespace TurboA.AgileFramework.WebCore.FilterExtend.SimpleExtend
 {
     /// <summary>
     /// 基于完成Filter的依赖注入

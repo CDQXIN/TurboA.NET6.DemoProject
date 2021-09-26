@@ -4,13 +4,34 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TurboA.AgileFramework.Common.Models;
+using TurboA.AgileFramework.WebCore;
 
-namespace TurboA.AspNetCore31.Demo.Utility
+namespace TurboA.AgileFramework.WebCore.FilterExtend.SimpleExtend
 {
+    public class CustomAttribute : Attribute
+    {
+        public const string Name = "Eleven";
+
+        public CustomAttribute(ILogger<CustomAttribute> log)
+        {
+
+        }
+
+        public CustomAttribute(string a, IHttpContextAccessor httpContextAccessor)
+        {
+            //DefaultHttpContext.Current
+            //httpContextAccessor.HttpContext//线程
+        }
+    }
+    /// <summary>
+    /// 异常处理Filter  需要IOC注入
+    /// </summary>
     public class CustomExceptionFilterAttribute : ExceptionFilterAttribute
     {
         #region Identity
@@ -21,8 +42,10 @@ namespace TurboA.AspNetCore31.Demo.Utility
         {
             this._modelMetadataProvider = modelMetadataProvider;
             this._logger = logger;
+            Console.WriteLine($"*************This {nameof(CustomExceptionFilterAttribute)} Init***************");
         }
         #endregion
+
         /// <summary>
         /// 异常发生，但是没有处理时
         /// 异常之后得写日志
@@ -30,15 +53,27 @@ namespace TurboA.AspNetCore31.Demo.Utility
         /// <param name="context"></param>
         public override void OnException(ExceptionContext context)
         {
+            Console.WriteLine($"*************This {nameof(CustomExceptionFilterAttribute)} OnException {this.Order}");
             if (!context.ExceptionHandled)
             {
-                //this._logger.LogError($"{context.HttpContext.Request.RouteValues["controller"]} is Error");
-                if (this.IsAjaxRequest(context.HttpContext.Request))//header看看是不是XMLHttpRequest
+                #region 日志
+                string url = context.HttpContext.Request.Path.Value;
+                string actionName = context.ActionDescriptor.DisplayName;
+                var logModel = new LogModel()
                 {
-                    context.Result = new JsonResult(new
+                    OriginalClassName = "",
+                    OriginalMethodName = actionName,
+                    Remark = $"来源于{nameof(CustomExceptionFilterAttribute)}.{nameof(OnException)}"
+                };
+                this._logger.LogError(context.Exception, $"OnException：{url}----->actionName={actionName}  Message={context.Exception.Message}", JsonConvert.SerializeObject(logModel));
+                #endregion
+
+                if (context.HttpContext.Request.IsAjaxRequest())//header看看是不是XMLHttpRequest
+                {
+                    context.Result = new JsonResult(new AjaxResult()
                     {
                         Result = false,
-                        Msg = context.Exception.Message
+                        Message = context.Exception.Message
                     });//中断式---请求到这里结束了，不再继续Action
                 }
                 else
@@ -48,13 +83,52 @@ namespace TurboA.AspNetCore31.Demo.Utility
                     result.ViewData.Add("Exception", context.Exception);
                     context.Result = result;
                 }
+
                 context.ExceptionHandled = true;
             }
         }
-        private bool IsAjaxRequest(HttpRequest request)
+    }
+
+    public class CustomSyncExceptionFilterAttribute : Attribute, IExceptionFilter, IFilterMetadata, IOrderedFilter
+    {
+        public int Order => 5;//先执行
+
+        /// <summary>
+        /// 只日志 不处理
+        /// </summary>
+        /// <param name="context"></param>
+        public void OnException(ExceptionContext context)
         {
-            string header = request.Headers["X-Requested-With"];
-            return "XMLHttpRequest".Equals(header);
+            Console.WriteLine($"This {nameof(CustomSyncExceptionFilterAttribute)} OnException {this.Order}");
+            throw new Exception($"This is Eleven's {nameof(CustomSyncExceptionFilterAttribute)} OnException抛出  Exception");
+
+
+            if (!context.ExceptionHandled)
+            {
+                Console.WriteLine($"This {nameof(CustomSyncExceptionFilterAttribute)} OnException {this.Order}  -Inside");
+                //context.ExceptionHandled = true;//不指定
+            }
+        }
+    }
+
+    public class CustomAsyncExceptionFilterAttribute : Attribute, IAsyncExceptionFilter, IFilterMetadata, IOrderedFilter
+    {
+        public int Order => 10;//先执行
+
+        /// <summary>
+        /// 只日志 不处理
+        /// </summary>
+        /// <param name="context"></param>
+        public async Task OnExceptionAsync(ExceptionContext context)
+        {
+            await Task.CompletedTask;
+            Console.WriteLine($"This {nameof(CustomAsyncExceptionFilterAttribute)} OnExceptionAsync {this.Order}");
+            if (!context.ExceptionHandled)
+            {
+                Console.WriteLine($"This {nameof(CustomAsyncExceptionFilterAttribute)} OnExceptionAsync {this.Order}  -Inside");
+
+                //context.ExceptionHandled = true;//不指定
+            }
         }
     }
 }

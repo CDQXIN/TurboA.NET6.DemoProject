@@ -1,8 +1,3 @@
-E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\obj\Debug\net5.0\TurboA.AgileFramework.WebCore.csproj.AssemblyReference.cache
-E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\obj\Debug\net5.0\TurboA.AgileFramework.WebCore.GeneratedMSBuildEditorConfig.editorconfig
-E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\obj\Debug\net5.0\TurboA.AgileFramework.WebCore.AssemblyInfoInputs.cache
-E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\obj\Debug\net5.0\TurboA.AgileFramework.WebCore.AssemblyInfo.cs
-E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\obj\Debug\net5.0\TurboA.AgileFramework.WebCore.csproj.CoreCompileInputs.cache
 E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\bin\Debug\net5.0\TurboA.AgileFramework.WebCore.deps.json
 E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\bin\Debug\net5.0\TurboA.AgileFramework.WebCore.dll
 E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\bin\Debug\net5.0\ref\TurboA.AgileFramework.WebCore.dll
@@ -16,6 +11,11 @@ E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\bin\Debug\net5.0\Micros
 E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\bin\Debug\net5.0\ServiceStack.Common.dll
 E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\bin\Debug\net5.0\TurboA.AgileFramework.Common.pdb
 E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\bin\Debug\net5.0\TurboA.AgileFramework.Core.pdb
+E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\obj\Debug\net5.0\TurboA.AgileFramework.WebCore.csproj.AssemblyReference.cache
+E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\obj\Debug\net5.0\TurboA.AgileFramework.WebCore.GeneratedMSBuildEditorConfig.editorconfig
+E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\obj\Debug\net5.0\TurboA.AgileFramework.WebCore.AssemblyInfoInputs.cache
+E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\obj\Debug\net5.0\TurboA.AgileFramework.WebCore.AssemblyInfo.cs
+E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\obj\Debug\net5.0\TurboA.AgileFramework.WebCore.csproj.CoreCompileInputs.cache
 E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\obj\Debug\net5.0\TurboA.AgileFramework.WebCore.csproj.CopyComplete
 E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\obj\Debug\net5.0\TurboA.AgileFramework.WebCore.dll
 E:\TurboA.NET6.DemoProject\TurboA.AgileFramework.WebCore\obj\Debug\net5.0\ref\TurboA.AgileFramework.WebCore.dll

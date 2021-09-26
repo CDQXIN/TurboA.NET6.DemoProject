@@ -1,9 +1,3 @@
-E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\obj\Debug\netcoreapp3.1\TurboA.NET6.AuthenticationCenter.csproj.AssemblyReference.cache
-E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\obj\Debug\netcoreapp3.1\TurboA.NET6.AuthenticationCenter.AssemblyInfoInputs.cache
-E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\obj\Debug\netcoreapp3.1\TurboA.NET6.AuthenticationCenter.AssemblyInfo.cs
-E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\obj\Debug\netcoreapp3.1\TurboA.NET6.AuthenticationCenter.csproj.CoreCompileInputs.cache
-E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\obj\Debug\netcoreapp3.1\TurboA.NET6.AuthenticationCenter.MvcApplicationPartsAssemblyInfo.cs
-E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\obj\Debug\netcoreapp3.1\TurboA.NET6.AuthenticationCenter.MvcApplicationPartsAssemblyInfo.cache
 E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\bin\Debug\netcoreapp3.1\appsettings.Development.json
 E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\bin\Debug\netcoreapp3.1\appsettings.json
 E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\bin\Debug\netcoreapp3.1\key.json
@@ -31,6 +25,12 @@ E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\bin\Debug\netcoreapp
 E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\bin\Debug\netcoreapp3.1\TurboA.AgileFramework.Common.dll
 E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\bin\Debug\netcoreapp3.1\TurboA.AgileFramework.Common.pdb
+E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\obj\Debug\netcoreapp3.1\TurboA.NET6.AuthenticationCenter.csproj.AssemblyReference.cache
+E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\obj\Debug\netcoreapp3.1\TurboA.NET6.AuthenticationCenter.AssemblyInfoInputs.cache
+E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\obj\Debug\netcoreapp3.1\TurboA.NET6.AuthenticationCenter.AssemblyInfo.cs
+E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\obj\Debug\netcoreapp3.1\TurboA.NET6.AuthenticationCenter.csproj.CoreCompileInputs.cache
+E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\obj\Debug\netcoreapp3.1\TurboA.NET6.AuthenticationCenter.MvcApplicationPartsAssemblyInfo.cs
+E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\obj\Debug\netcoreapp3.1\TurboA.NET6.AuthenticationCenter.MvcApplicationPartsAssemblyInfo.cache
 E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\obj\Debug\netcoreapp3.1\staticwebassets\TurboA.NET6.AuthenticationCenter.StaticWebAssets.Manifest.cache
 E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\obj\Debug\netcoreapp3.1\staticwebassets\TurboA.NET6.AuthenticationCenter.StaticWebAssets.xml
 E:\TurboA.NET6.DemoProject\TurboA.NET6.AuthenticationCenter\obj\Debug\netcoreapp3.1\scopedcss\bundle\TurboA.NET6.AuthenticationCenter.styles.css
