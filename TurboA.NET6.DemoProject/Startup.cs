@@ -17,6 +17,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TurboA.AgileFramework.Pandora.IOCReplace;
 using TurboA.AgileFramework.WebCore.AuthenticationExtend;
+using TurboA.AgileFramework.WebCore.FilterExtend.SimpleExtend;
 using TurboA.AgileFramework.WebCore.IOCExtend;
 using TurboA.AgileFramework.WebCore.LogExtend;
 using TurboA.AgileFramework.WebCore.MiddlewareExtend;
@@ -49,7 +50,31 @@ namespace TurboA.NET6.DemoProject
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddControllersWithViews();
-            services.AddControllersWithViews().AddControllersAsServices();//服务化
+            //services.AddControllersWithViews().AddControllersAsServices();//服务化
+            #region MVC配置
+            //services.AddControllersWithViews();
+            services.AddControllersWithViews(options =>
+            {
+                #region 顺序问题
+                //options.Filters.Add<CustomGlobalOrderFilterAttribute>();//全局注册 对所有的Action都生效
+                ////options.Filters.Add<CustomGlobalOrderFilterAttribute>(30);
+                //options.Filters.Add(typeof(CustomGlobalOrderFilterAttribute), 30);
+                #endregion
+
+                #region Filter注入+ExceptionFilter
+                //options.Filters.Add<CustomExceptionFilterAttribute>();
+                #endregion
+            })
+            .AddRazorRuntimeCompilation()//动态编译
+            .AddNewtonsoftJson()//返回中文
+            .AddControllersAsServices()//服务化-Activetor
+            ;
+
+            #region ServiceFilter注入需要---CustomIOCFilterFactory注入需要
+            services.AddScoped<CustomExceptionFilterAttribute>();
+            #endregion
+
+            #endregion
 
             #region IOCShow
             ////只能构造函数注入--需要一个构造函数超集
@@ -652,6 +677,42 @@ namespace TurboA.NET6.DemoProject
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
+
+                #region  扩展指定错误处理动作
+                //app.UseStatusCodePagesWithReExecute("/Error/{0}");//只要不是200 都能进来
+                //app.UseExceptionHandler(errorApp =>
+                //{
+                //    errorApp.Run(async context =>
+                //    {
+                //        context.Response.StatusCode = 200;
+                //        context.Response.ContentType = "text/html";
+
+                //        await context.Response.WriteAsync("<html lang=\"en\"><body>\r\n");
+                //        await context.Response.WriteAsync("ERROR!<br><br>\r\n");
+
+                //        var exceptionHandlerPathFeature =
+                //            context.Features.Get<IExceptionHandlerPathFeature>();
+
+                //        Console.WriteLine("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+                //        Console.WriteLine($"{exceptionHandlerPathFeature?.Error.Message}");
+                //        Console.WriteLine("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+
+                //        // Use exceptionHandlerPathFeature to process the exception (for example, 
+                //        // logging), but do NOT expose sensitive error information directly to 
+                //        // the client.
+
+                //        if (exceptionHandlerPathFeature?.Error is FileNotFoundException)
+                //        {
+                //            await context.Response.WriteAsync("File error thrown!<br><br>\r\n");
+                //        }
+
+                //        await context.Response.WriteAsync("<a href=\"/\">Home</a><br>\r\n");
+                //        await context.Response.WriteAsync("</body></html>\r\n");
+                //        await context.Response.WriteAsync(new string(' ', 512)); // IE padding
+                //    });
+                //});
+                //app.UseHsts();
+                #endregion
             }
 
             #region 添加Log4Net或者自定义的
